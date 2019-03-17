@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation=" http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+<bean id="madhu" class="com.xworkz.spring.bean.Trainer">
+<property name="expertise" value="coreJava"></property>
+</bean>
+
+<bean id="X-workz" class="com.xworkz.spring.bean.Xworkz">
+<constructor-arg value="Rajajinagar"></constructor-arg>
+<property name="trainer" ref="madhu"></property>
+</bean>
+
+<bean id="serv" class="com.xworkz.spring.flipkart.CourierService">
+<property name="branchName" value="vijaynagar"></property>
+</bean>
+
+<bean id="flip" class="com.xworkz.spring.flipkart.Flipkart">
+<constructor-arg value="125"></constructor-arg>
+<constructor-arg ref="serv"></constructor-arg>
+</bean>
+
+</beans>
